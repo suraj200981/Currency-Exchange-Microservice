@@ -1,5 +1,7 @@
 package com.example.microservices.Currency.Exchange.Microservice.model;
 
+import org.springframework.core.env.Environment;
+
 import java.math.BigDecimal;
 
 public class CurrencyExchange {
@@ -8,6 +10,8 @@ public class CurrencyExchange {
     private String from;
     private String to;
     private BigDecimal conversionMultiple;
+
+    private String environment;
 
     public CurrencyExchange(){
 
@@ -18,6 +22,14 @@ public class CurrencyExchange {
         this.from = from;
         this.to = to;
         this.conversionMultiple = conversionMultiple;
+    }
+
+    public String getEnvironment() {
+        return environment;
+    }
+
+    public void setEnvironment(String environment) {
+        this.environment = environment;
     }
 
     public int getId() {
