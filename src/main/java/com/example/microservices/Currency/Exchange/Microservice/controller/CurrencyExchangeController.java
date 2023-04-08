@@ -16,7 +16,7 @@ public class CurrencyExchangeController {
     Environment environment;
     @GetMapping("/currency-exchange/from/{from}/to/{to}")
     public CurrencyExchange getExchangeRate(@PathVariable String from, @PathVariable String to){
-        CurrencyExchange currencyExchange = new CurrencyExchange(1, from.toUpperCase(),
+        CurrencyExchange currencyExchange = new CurrencyExchange(1L, from.toUpperCase(),
                 to.toUpperCase(),
                 BigDecimal.valueOf(50));
 

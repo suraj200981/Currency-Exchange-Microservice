@@ -2,13 +2,18 @@ package com.example.microservices.Currency.Exchange.Microservice.model;
 
 import org.springframework.core.env.Environment;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Entity
 public class CurrencyExchange {
 
-    private int id;
-    private String from;
-    private String to;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String currencyFrom;
+    private String currencyTo;
     private BigDecimal conversionMultiple;
 
     private String environment;
@@ -17,10 +22,10 @@ public class CurrencyExchange {
 
     }
 
-    public CurrencyExchange(int id, String from, String to, BigDecimal conversionMultiple) {
+    public CurrencyExchange(Long id, String from, String to, BigDecimal conversionMultiple) {
         this.id = id;
-        this.from = from;
-        this.to = to;
+        this.currencyFrom = from;
+        this.currencyTo = to;
         this.conversionMultiple = conversionMultiple;
     }
 
@@ -32,28 +37,28 @@ public class CurrencyExchange {
         this.environment = environment;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
     public String getFrom() {
-        return from;
+        return currencyFrom;
     }
 
     public void setFrom(String from) {
-        this.from = from;
+        this.currencyFrom = from;
     }
 
     public String getTo() {
-        return to;
+        return currencyTo;
     }
 
     public void setTo(String to) {
-        this.to = to;
+        this.currencyTo = to;
     }
 
     public BigDecimal getConversionMultiple() {
