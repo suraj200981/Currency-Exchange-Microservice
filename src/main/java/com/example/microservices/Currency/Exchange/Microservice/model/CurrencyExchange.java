@@ -22,10 +22,10 @@ public class CurrencyExchange {
 
     }
 
-    public CurrencyExchange(Long id, String from, String to, BigDecimal conversionMultiple) {
+    public CurrencyExchange(Long id, String currencyFrom, String currencyTo, BigDecimal conversionMultiple) {
         this.id = id;
-        this.currencyFrom = from;
-        this.currencyTo = to;
+        this.currencyFrom = currencyFrom;
+        this.currencyTo = currencyTo;
         this.conversionMultiple = conversionMultiple;
     }
 
@@ -49,16 +49,16 @@ public class CurrencyExchange {
         return currencyFrom;
     }
 
-    public void setFrom(String from) {
-        this.currencyFrom = from;
+    public void setFrom(String currencyFrom) {
+        this.currencyFrom = currencyFrom;
     }
 
     public String getTo() {
         return currencyTo;
     }
 
-    public void setTo(String to) {
-        this.currencyTo = to;
+    public void setTo(String currencyTo) {
+        this.currencyTo = currencyTo;
     }
 
     public BigDecimal getConversionMultiple() {
